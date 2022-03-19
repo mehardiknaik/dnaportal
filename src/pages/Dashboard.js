@@ -2,6 +2,7 @@ import { Container, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GetUserInfoApi } from "../api/api";
+import DashboardBg from "../components/DashboardBg/DashboardBg";
 import Info from "../components/Info/Info";
 import Name from "../components/Name/Name";
 import PlanDetails from "../components/PlanDetails/PlanDetails";
@@ -27,6 +28,8 @@ const Dashboard = () => {
   }, []);
 
   return (
+    <>
+      <DashboardBg/>
     <Container>
       {userInfo && (
         <>
@@ -39,6 +42,7 @@ const Dashboard = () => {
         </>
       )}
     </Container>
+    </>
   );
 };
 
