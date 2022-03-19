@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/dnaportal/static/css/main.7e993137.css",
+    "main.js": "/dnaportal/static/js/main.8e58f7c5.js",
+    "static/js/787.9d939562.chunk.js": "/dnaportal/static/js/787.9d939562.chunk.js",
+    "static/media/internet.svg": "/dnaportal/static/media/internet.efd0cdde06c9f7f39be64f1f1867eb74.svg",
+    "static/media/logout.svg": "/dnaportal/static/media/logout.090d442ad6c95272a72c1670095b2113.svg",
+    "static/media/thumbUp.svg": "/dnaportal/static/media/thumbUp.0786e2cd23708decb512ede33a0371a6.svg",
+    "index.html": "/dnaportal/index.html",
+    "main.7e993137.css.map": "/dnaportal/static/css/main.7e993137.css.map",
+    "main.8e58f7c5.js.map": "/dnaportal/static/js/main.8e58f7c5.js.map",
+    "787.9d939562.chunk.js.map": "/dnaportal/static/js/787.9d939562.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e993137.css",
+    "static/js/main.8e58f7c5.js"
+  ]
+}
