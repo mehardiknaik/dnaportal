@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StatusWrapper = styled.div`
   display: flex;
   gap: 1rem;
+  margin-bottom: 1rem;
   & > div {
     flex: 1;
     padding: 1rem;

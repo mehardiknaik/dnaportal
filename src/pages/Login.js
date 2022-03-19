@@ -19,7 +19,7 @@ const Login = () => {
   };
   const checkLogin = () => {
     if (localStorage.getItem("token")) {
-      // navigate("/dashboard");
+      navigate("/dashboard");
     }
   };
   const onSubmit = async (details) => {
@@ -56,6 +56,7 @@ const Login = () => {
             alignItems: "center",
             flexDirection: "column",
             gap: "1rem",
+            padding: "0.8rem",
             height: "calc(100vh - 97px);",
           }}
         >
