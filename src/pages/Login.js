@@ -1,10 +1,24 @@
-import { Container, Paper, TextField } from "@mui/material";
+import { Container, Paper } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { LoginApi } from "../api/api";
 import { useForm } from "react-hook-form";
-import { LoadingButton } from "@mui/lab";
 import Toast from "../components/Toast/Toast";
 import { useNavigate } from "react-router-dom";
+import LoginForm from "../components/LoginForm/LoginForm";
+import LoginBg from "../components/LoginBg/LoginBg";
+import styled from "styled-components";
+
+const PaperWrapper=styled(Paper)`
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+padding: 0.8rem;
+height: calc(100vh - 167px);
+@media (max-width: 900px) {
+  flex-direction: column-reverse;
+}
+`
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -48,41 +62,17 @@ const Login = () => {
 
   return (
     <Container>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Paper
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
-            gap: "1rem",
-            padding: "0.8rem",
-            height: "calc(100vh - 97px);",
-          }}
-        >
-          <TextField
-            id="outlined-basic"
-            label="Username"
-            variant="outlined"
-            {...register("Username", { required: true })}
-          />
-          <TextField
-            id="outlined-basic"
-            label="Password"
-            variant="outlined"
-            {...register("Password", { required: true })}
-          />
-          <LoadingButton
-            type="submit"
-            loading={loading}
-            loadingIndicator="Loading.."
-            variant="outlined"
-            sx={{ width: "9rem" }}
-          >
-            Login
-          </LoadingButton>
-        </Paper>
-      </form>
+      <PaperWrapper
+        elevation={13}
+      >
+      <LoginBg />
+      <LoginForm
+        onSubmit={onSubmit}
+        loading={loading}
+        handleSubmit={handleSubmit}
+        register={register}
+      />
+      </PaperWrapper>
       <Toast open={open} setopen={setopen} toastMsg={toastMsg} />
     </Container>
   );

@@ -7,7 +7,7 @@ import internet from "../../images/internet.svg";
 const Status = ({ Status, OnlineStatus, TotalUsage }) => {
   return (
     <StatusWrapper>
-      <Paper elevation={3}>
+      <Paper elevation={13}>
         <Circle Status={Status}>
           <img src={thumbUp} width={24} height={24} alt="" />
         </Circle>
@@ -16,7 +16,7 @@ const Status = ({ Status, OnlineStatus, TotalUsage }) => {
           <Typography variant="subtitle1">{Status}</Typography>
         </div>
       </Paper>
-      <Paper>
+      <Paper elevation={13}>
         <Circle2 Status={OnlineStatus}>
           <img src={internet} width={24} height={24} alt="" />
         </Circle2>

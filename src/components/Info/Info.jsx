@@ -1,4 +1,11 @@
-import { Card, CardContent, Divider, Grid, Typography } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Divider,
+  Grid,
+  Paper,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import { Singleinfo } from "./style";
 
@@ -10,10 +17,11 @@ const Info = ({
   MacId,
   CustomerNumber,
   Phone,
+  ServiceArea,
 }) => {
   return (
     <Grid item xs={12} md={6}>
-      <Card variant="outlined">
+      <Card component={Paper} elevation={13}>
         <CardContent>
           <Typography variant="h6">Contact Details</Typography>
           <Divider />
@@ -35,7 +43,7 @@ const Info = ({
           </Singleinfo>
           <Singleinfo>
             <Typography variant="subtitle1" className="title">
-              Customer Number
+              Customer No.
             </Typography>
             <Typography variant="subtitle2" className="text">
               {CustomerNumber}
@@ -63,6 +71,14 @@ const Info = ({
             </Typography>
             <Typography variant="subtitle2" className="text">
               {Address}
+            </Typography>
+          </Singleinfo>
+          <Singleinfo>
+            <Typography variant="subtitle1" className="title">
+              Service Area
+            </Typography>
+            <Typography variant="subtitle2" className="text">
+              {ServiceArea}
             </Typography>
           </Singleinfo>
           <Singleinfo>

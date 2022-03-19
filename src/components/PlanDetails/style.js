@@ -7,7 +7,10 @@ export const Wrapper = styled.div`
     flex-direction: column;
   }
   & > div {
-    flex: 1;
+    width: 50%;
+    @media (max-width: 900px) {
+      width: 100%;
+    }
   }
 `;
 export const Singleinfo = styled.div`

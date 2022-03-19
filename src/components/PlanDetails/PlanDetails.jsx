@@ -1,4 +1,11 @@
-import { Card, CardContent, Divider, Grid, Typography } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Divider,
+  Grid,
+  Paper,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import { Wrapper } from "./style";
 import { Doughnut } from "react-chartjs-2";
@@ -6,10 +13,16 @@ import "chart.js/auto";
 import { Singleinfo } from "./style";
 import { GetDate } from "../../config/date";
 
-const PlanDetails = ({ UsedDays, remainingDay,CurrentPlan ,customerexpirydate,PlanSpeed}) => {
+const PlanDetails = ({
+  UsedDays,
+  remainingDay,
+  CurrentPlan,
+  customerexpirydate,
+  PlanSpeed,
+}) => {
   return (
     <Grid item xs={12} md={6}>
-      <Card variant="outlined">
+      <Card component={Paper} elevation={13}>
         <CardContent>
           <Typography variant="h6">Plan Details</Typography>
           <Divider />
@@ -59,7 +72,7 @@ const PlanDetails = ({ UsedDays, remainingDay,CurrentPlan ,customerexpirydate,Pl
                   Speed
                 </Typography>
                 <Typography variant="subtitle2" className="text">
-                  {PlanSpeed} MB/s
+                  {PlanSpeed} Mb/s
                 </Typography>
               </Singleinfo>
               <Singleinfo>
@@ -67,7 +80,7 @@ const PlanDetails = ({ UsedDays, remainingDay,CurrentPlan ,customerexpirydate,Pl
                   Days
                 </Typography>
                 <Typography variant="subtitle2" className="text">
-                  {remainingDay+UsedDays} Days
+                  {remainingDay + UsedDays} Days
                 </Typography>
               </Singleinfo>
             </div>
