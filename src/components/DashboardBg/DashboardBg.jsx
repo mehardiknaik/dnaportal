@@ -1,10 +1,8 @@
-import React from 'react'
-import { BgWrapper } from './style'
+import React from "react";
+import { BgWrapper } from "./style";
 
 const DashboardBg = () => {
-  return (
-    <BgWrapper></BgWrapper>
-  )
-}
+  return <BgWrapper />;
+};
 
-export default DashboardBg
+export default DashboardBg;

@@ -15,7 +15,7 @@ const Header = () => {
     <>
       <HeaderContainer>
         <div className="text">
-          <Typography variant="h4">
+          <Typography variant="h5">
             {pathname === "/dashboard" ? "Dashboard" : "Login"}
           </Typography>
         </div>

@@ -29,19 +29,19 @@ const Dashboard = () => {
 
   return (
     <>
-      <DashboardBg/>
-    <Container>
-      {userInfo && (
-        <>
-          <Name {...userInfo} />
-          <Status Status={userInfo.Status} {...userInfo.Usage} />
-          <Grid container spacing={2}>
-            <Info {...userInfo} />
-            <PlanDetails {...userInfo} />
-          </Grid>
-        </>
-      )}
-    </Container>
+      <DashboardBg />
+      <Container>
+        {userInfo && (
+          <>
+            <Name {...userInfo} />
+            <Status Status={userInfo.Status} {...userInfo.Usage} />
+            <Grid container spacing={2}>
+              <Info {...userInfo} />
+              <PlanDetails {...userInfo} />
+            </Grid>
+          </>
+        )}
+      </Container>
     </>
   );
 };
