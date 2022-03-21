@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import LoginForm from "../components/LoginForm/LoginForm";
 import LoginBg from "../components/LoginBg/LoginBg";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 const PaperWrapper=styled(Paper)`
 display: flex;
@@ -59,7 +60,6 @@ const Login = () => {
   useEffect(() => {
     checkLogin();
   }, []);
-
   return (
     <Container>
       <PaperWrapper

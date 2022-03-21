@@ -3,12 +3,16 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { HeaderBg, HeaderContainer } from "./style";
 import logout from "../../images/logout.svg";
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
   const { pathname } = useLocation();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const userInfodata = useSelector((state) => state.actionOnData);
   const Logout = () => {
     localStorage.clear();
+    dispatch({ type: "LOGOUT" });
     navigate("/");
   };
   return (
@@ -16,7 +20,9 @@ const Header = () => {
       <HeaderContainer>
         <div className="text">
           <Typography variant="h5">
-            {pathname === "/dashboard" ? "Dashboard" : "Login"}
+            {pathname === "/dashboard" && userInfodata.Name
+              ? `Hi... ${userInfodata?.Name.split(" ")[0]}`
+              : "Login"}
           </Typography>
         </div>
         {pathname === "/dashboard" && (

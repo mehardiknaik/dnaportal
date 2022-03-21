@@ -7,37 +7,40 @@ import Info from "../components/Info/Info";
 import Name from "../components/Name/Name";
 import PlanDetails from "../components/PlanDetails/PlanDetails";
 import Status from "../components/Status/Status";
+import { useSelector, useDispatch } from "react-redux";
+import { addData } from "../actions/actions";
 const Dashboard = () => {
-  const [userInfo, setUserInfo] = useState(null);
+  const userInfodata = useSelector((state) => state.actionOnData);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const getDetails = async () => {
     try {
       const {
         data: { CustomerDetail },
       } = await GetUserInfoApi();
       console.log(CustomerDetail);
-      setUserInfo(CustomerDetail);
+      dispatch(addData(CustomerDetail));
     } catch {
       console.log("error");
       localStorage.clear();
+      dispatch({type:"LOGOUT"})
       navigate("/");
     }
   };
   useEffect(() => {
     getDetails();
   }, []);
-
   return (
     <>
       <DashboardBg />
       <Container>
-        {userInfo && (
+        {Object.keys(userInfodata).length > 0 && (
           <>
-            <Name {...userInfo} />
-            <Status Status={userInfo.Status} {...userInfo.Usage} />
+            <Name {...userInfodata} />
+            <Status Status={userInfodata.Status} {...userInfodata.Usage} />
             <Grid container spacing={2}>
-              <Info {...userInfo} />
-              <PlanDetails {...userInfo} />
+              <Info {...userInfodata} />
+              <PlanDetails {...userInfodata} />
             </Grid>
           </>
         )}

@@ -8,10 +8,9 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Wrapper } from "./style";
-import { Doughnut } from "react-chartjs-2";
-import "chart.js/auto";
 import { Singleinfo } from "./style";
 import { GetDate } from "../../config/date";
+import GaugeChart from "react-gauge-chart";
 
 const PlanDetails = ({
   UsedDays,
@@ -28,26 +27,20 @@ const PlanDetails = ({
           <Divider />
           <Wrapper>
             <div>
-              <Doughnut
-                data={{
-                  datasets: [
-                    {
-                      data: [UsedDays, remainingDay],
-                      backgroundColor: [
-                        "rgb(255, 99, 132)",
-                        "rgb(255, 205, 86)",
-                      ],
-                    },
-                  ],
-                  labels: ["Used Days", "Remaining Day"],
-                }}
-                options={{
-                  rotation: -90,
-                  circumference: 180,
-                  responsive: true,
-                  maintainAspectRatio: true,
-                }}
+              <GaugeChart
+                id="gauge-chart5"
+                nrOfLevels={20}
+                percent={UsedDays / (UsedDays + remainingDay)}
+                hideText
+                animDelay={500}
               />
+              <Typography
+                sx={{ color: "#9a9a9a" }}
+                variant="subtitle1"
+                align="center"
+              >
+                {UsedDays} days Used & {remainingDay} days remaining
+              </Typography>
             </div>
             <div>
               {" "}
